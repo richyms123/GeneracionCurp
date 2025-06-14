@@ -91,14 +91,14 @@
                 estado = Estado.Substring(0, 2).ToUpper();
 
             char primerApellidoConsonanteInterna = PrimerApellido.Substring(1).ToUpper()
-                .FirstOrDefault(c => "BCDFGHJKLMNPQRSTVWXYZ".Contains(c));
+                .FirstOrDefault(c => "BCDFGHJKLMNÑPQRSTVWXYZ".Contains(c));
 
-            if (primerApellidoConsonanteInterna == '\0') primerApellidoConsonanteInterna = 'X';
+            if (primerApellidoConsonanteInterna == '\0' || primerApellidoConsonanteInterna=='Ñ') primerApellidoConsonanteInterna = 'X';
 
             char segundoApellidoConsonanteInterna = SegundoApellido.Substring(1).ToUpper()
-                .FirstOrDefault(c => "BCDFGHJKLMNPQRSTVWXYZ".Contains(c));
+                .FirstOrDefault(c => "BCDFGHJKLMNÑPQRSTVWXYZ".Contains(c));
 
-            if (segundoApellidoConsonanteInterna == '\0') segundoApellidoConsonanteInterna = 'X';
+            if (segundoApellidoConsonanteInterna == '\0' || segundoApellidoConsonanteInterna=='Ñ') segundoApellidoConsonanteInterna = 'X';
 
             char nombresConsonanteInterna = Nombre.Substring(1).ToUpper()
                 .FirstOrDefault(c => "BCDFGHJKLMNPQRSTVWXYZ".Contains(c));
